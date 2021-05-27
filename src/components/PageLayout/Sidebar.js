@@ -17,7 +17,10 @@ const Sidebar = () => {
           </span>
         </NavLink>
         <NavLink as="li" className="list-group-item" to="/finish">
-          Finished Books <span className="badge badge-sm bg-primary">0</span>
+          Finished Books{" "}
+          <span className="badge badge-sm bg-primary">
+            {allBooks?.finishedList?.length}
+          </span>
         </NavLink>
       </ul>
     </div>

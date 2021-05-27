@@ -10,6 +10,21 @@ const reducerBooks = (state = initialState, action) => {
         ...state,
         readingList: [...state.readingList, action.payload],
       };
+    case "REMOVE_FROM_READING_LIST":
+      return {
+        ...state,
+        readingList: state.readingList.filter(
+          (list) => list.id != action.bookId
+        ),
+      };
+    case "ADD_TO_FINISHED_LIST":
+      return {
+        ...state,
+        readingList: state.readingList.filter(
+          (list) => list.id != action.book.id
+        ),
+        finishedList: [...state.finishedList, action.book],
+      };
 
     default:
       return state;

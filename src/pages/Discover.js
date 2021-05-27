@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Book from "../components/Book/Book";
-import books from "../fakeData/books.json";
+// import books from "../fakeData/books.json";
 import PageLayout from "../components/PageLayout/PageLayout";
 import axios from "axios";
 const Discover = () => {
@@ -18,7 +18,7 @@ const Discover = () => {
   return (
     <PageLayout>
       {allBooks.map((book) => (
-        <Book key={book.id} book={book} />
+        <Book key={book.id} reading={false} book={book} />
       ))}
     </PageLayout>
   );
